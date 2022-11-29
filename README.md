@@ -5,7 +5,6 @@ See the [paper](TODO: INSERT) for more details.
 ## The Data
 
 <p align="center">
-    <img src="imgs/pore.png" width="95%"/>
     <img src="imgs/ta-c.png" width="23%"/>
     <img src="imgs/buckies.png" width="23%"/>
     <img src="imgs/diamond.png" width="23%"/>
