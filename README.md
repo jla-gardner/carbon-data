@@ -1,6 +1,6 @@
 # 22.9 Million Carbon Atom Dataset
 
-See the [paper](TODO: INSERT) for more details.
+See the paper [Synthetic Data Enable Experiments in Atomistic Machine Learning](https://arxiv.org/abs/2211.16443) for more details.
 
 ## The Data
 
@@ -15,7 +15,7 @@ See the [paper](TODO: INSERT) for more details.
 
 As can be seen from the examples above (generated using [Ovito](https://www.ovito.org)), this dataset captures a wide variety of chemical environments and features, including carbon nano-tubes, graphitic films, buckyball-esque clusters, cubic and hexagonal diamond and tetrahedral amorphous carbon.
 
-The density, anneal temperature, trajectory id and timestamp for each structure is given in the header of each extxyz file entry. This can be accessed using, for instance, the [ase](https://wiki.fysik.dtu.dk/ase/) python package:
+Each atomic environment has been labelled with a "local-energy" by the [C-GAP-17 potential](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.094203), and these are included in the `.extxyx` files as a per atom quantity.. These can be accessed using, for instance, the Atomic Simulation Environment package ([ase](https://wiki.fysik.dtu.dk/ase/)):
 
 ```python
 from ase.io import read
@@ -23,7 +23,11 @@ from ase.io import read
 
 trajectory = read("results/density-1.0-T-2000.extxyz", index=":")
 structure = trajectory[0]
+local_energies = structure.get_array("gap17_energy")
+```
 
+The density, anneal temperature, trajectory id and timestamp for each structure is given as a per-structure quantity in the header of each `.extxyz` entry. 
+```python
 density = structure.info["density"]          # in gcm-3
 temperature = structure.info["temperature"]  # in K
 trajectory_id = structure.info["run_id"]     # integer
@@ -47,5 +51,15 @@ The [LAMMPS](https://lammps.sandia.gov/) molecular dynamics package, together wi
 If you use this dataset in your research, please cite the following paper:
 
 ```bibtex
-@article{TODO: INSERT}
+@misc{Gardner-22,
+  title = {Synthetic Data Enable Experiments in Atomistic Machine Learning},
+  author = {Gardner, John L. A. and Beaulieu, Zo{\'e} Faure and Deringer, Volker L.},
+  year = {2022},
+  number = {arXiv:2211.16443},
+  eprint = {2211.16443},
+  eprinttype = {arxiv},
+  primaryclass = {physics},
+  doi = {10.48550/arXiv.2211.16443},
+  archiveprefix = {arXiv}
+}
 ```
