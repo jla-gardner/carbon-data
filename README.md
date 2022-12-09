@@ -1,6 +1,6 @@
 # 22.9 Million Carbon Atom Dataset
 
-See the paper [Synthetic Data Enable Experiments in Atomistic Machine Learning](https://arxiv.org/abs/2211.16443) for more details.
+See the preprint [Synthetic Data Enable Experiments in Atomistic Machine Learning](https://arxiv.org/abs/2211.16443) for more details.
 
 ## The Data
 
@@ -48,7 +48,7 @@ The [LAMMPS](https://lammps.sandia.gov/) molecular dynamics package, together wi
 
 ## Citation
 
-If you use this dataset in your research, please cite the following paper:
+If you use this dataset in your research, please cite the following:
 
 ```bibtex
 @misc{Gardner-22,
