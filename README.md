@@ -15,7 +15,7 @@ See the preprint [Synthetic Data Enable Experiments in Atomistic Machine Learnin
 
 As can be seen from the examples above (generated using [Ovito](https://www.ovito.org)), this dataset captures a wide variety of chemical environments and features, including carbon nano-tubes, graphitic films, buckyball-esque clusters, cubic and hexagonal diamond and tetrahedral amorphous carbon.
 
-Each atomic environment has been labelled with a "local-energy" by the [C-GAP-17 potential](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.094203), and these are included in the `.extxyx` files as a per atom quantity.. These can be accessed using, for instance, the Atomic Simulation Environment package ([ase](https://wiki.fysik.dtu.dk/ase/)):
+Each atomic environment has been labelled with a "local-energy" (together with a force) by the [C-GAP-17 potential](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.094203), and these are included in the `.extxyx` files as per atom quantities. These can be accessed using, for instance, the Atomic Simulation Environment package ([ase](https://wiki.fysik.dtu.dk/ase/)):
 
 ```python
 from ase.io import read
