@@ -1,5 +1,7 @@
 # 22.9 Million Carbon Atom Dataset
 
+[![DOI](https://zenodo.org/badge/572152596.svg)](https://zenodo.org/badge/latestdoi/572152596)
+
 See the preprint [Synthetic Data Enable Experiments in Atomistic Machine Learning](https://arxiv.org/abs/2211.16443) for more details.
 
 ## The Data
@@ -26,14 +28,14 @@ structure = trajectory[0]
 local_energies = structure.get_array("gap17_energy")
 ```
 
-The density, anneal temperature, trajectory id and timestamp for each structure is given as a per-structure quantity in the header of each `.extxyz` entry. 
+The density, anneal temperature, trajectory id and timestamp for each structure is given as a per-structure quantity in the header of each `.extxyz` entry.
+
 ```python
 density = structure.info["density"]          # in gcm-3
 temperature = structure.info["temperature"]  # in K
 trajectory_id = structure.info["run_id"]     # integer
 timestamp = structure.info["time"]           # in ps
 ```
-
 
 ## Generation Procedure
 
@@ -44,7 +46,7 @@ timestamp = structure.info["time"]           # in ps
 Each trajecotry was seeded using a structure generated using the [`./generate_structure.py`](./generate_structure.py) script, which generates random structures for a given density using a hard-sphere constraint.
 
 The [LAMMPS](https://lammps.sandia.gov/) molecular dynamics package, together with the [C-GAP-17 potential](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.094203) was then used to perform a melt-quench-anneal simulation, with temperature profile as depicted above. Snapshots were taken at 1ps intervals, for a total of 210 snapshots per trajectory.
-(546 trajectories * 210 snapshots * 200 atoms = 22.9 million atomic enviroments).
+(546 trajectories _ 210 snapshots _ 200 atoms = 22.9 million atomic enviroments).
 
 ## Citation
 
